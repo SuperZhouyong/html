@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">window.alert = console.log;</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>专题</title>
+  <meta http-equiv="Cache-Control" content="max-age=180">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <script type="text/javascript">
+    ~function () {
+      var u = navigator.userAgent.toLowerCase();
+      if (u.indexOf('micromessenger') == -1 || u.indexOf('android') == -1) return;
+      var matchs = u.match(/micromessenger\/(\d+)\./);
+      if (matchs && matchs[1] < 8) {
+        var meta = document.createElement('meta');
+        meta.setAttribute('name', 'x5-cache');
+        meta.setAttribute('content', 'disable');
+        var head = document.head || document.getElementsByTagName("head")[0];
+        head.appendChild(meta);
+      }
+    }()
+  </script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/reset.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+  <style>
+    body {
+      font-size: 16px;
+      background-color: #f6f6f6;
+      margin: 0.625rem;
+      font-family: "PingFang SC",miui,system-ui,-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- 跑马灯广播 -->
+    <div class="notify">
+      <img src="img/notify.png" alt="">
+      <div class="marquee">
+        <div class="move-wrap">
+          <p class="scroll-title">!!!添加下方微信号，进入交流群，快速处理问题</p>
+          <p class="scroll-title">!!!添加下方微信号，进入交流群，快速处理问题</p>
+          <p class="scroll-title">破解各大影视平台 VIP 会员</p>
+        </div>
+      </div>
+    </div>
+    <!-- wx群 -->
+    <div class="qrcode">
+      <img class="wx" src="img/qrcode.png" alt="">
+      <span class="gift" @click="usage()">使用教程</span>
+    </div>
+    <!-- 热门通知 -->
+    <div class="hot">
+      <span class="icon">HOT</span>
+      <span id="wechat" class="title" data-clipboard-text="17600298095">添加微信号 17600298095 进群，找资源，缺少资源，资源卡顿，无法下载，投屏问题，统统进群反馈问题，快速解决。资源热播剧没有及时更新的，进群催更
+      </span>
+    </div>
+    <!-- 播放器 -->
+    <div class="container">
+      <div class="player" v-for="item in playerDict" :key="item.id" @click="switchPlayer(item)">
+        <img class="icon" :src="item.img" alt="">
+        <span class="title">{{item.name}}</span>
+      </div>
+    </div>
+    <!-- 使用教程 -->
+    <Usage v-model="show" @confirm="confirm"></Usage>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

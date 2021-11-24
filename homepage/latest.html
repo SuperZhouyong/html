@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">window.alert = console.log;</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>专题</title>
+  <meta http-equiv="Cache-Control" content="max-age=180">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <script type="text/javascript">
+    ~function () {
+      var u = navigator.userAgent.toLowerCase();
+      if (u.indexOf('micromessenger') == -1 || u.indexOf('android') == -1) return;
+      var matchs = u.match(/micromessenger\/(\d+)\./);
+      if (matchs && matchs[1] < 8) {
+        var meta = document.createElement('meta');
+        meta.setAttribute('name', 'x5-cache');
+        meta.setAttribute('content', 'disable');
+        var head = document.head || document.getElementsByTagName("head")[0];
+        head.appendChild(meta);
+      }
+    }()
+  </script>
+  <!--<script src="https://browser.sentry-cdn.com/6.13.3/bundle.tracing.min.js"-->
+  <!--  integrity="sha384-bMCNwkS0NNIDdeiv/LpGYQjDzjnZSqqN12IWUUyPlSTLXQloo4EAl9P9mW9AyVzw" crossorigin="anonymous">-->
+  <!--  </script>-->
+  <!--<script src="https://browser.sentry-cdn.com/6.13.3/bundle.min.js"-->
+  <!--  integrity="sha384-sGMbmxgVprpEFMz6afNDyADd4Kav86v5Tvo2Y6w5t8tHUn1P1at3lCjN7IQo2c7E" crossorigin="anonymous">-->
+  <!--  </script>-->
+  <!--<script>-->
+  <!--  Sentry.init({-->
+    <!--//   dsn: "https://4d346a3bdaf74bafbd6287f0affeabec@o1033078.ingest.sentry.io/6030623",-->
+  <!--  dsn: "https://92a23abebde246d3a601ef9b1d7118eb@o1049394.ingest.sentry.io/6030661",-->
+  <!--    integrations: [new Sentry.Integrations.BrowserTracing()],-->
+  <!--    tracesSampleRate: 1.0,-->
+  <!--  });-->
+  <!--</script>-->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/reset.css">
+  <!--<script src="js/clipboard.min.js"></script>-->
+  <style>
+    body {
+      font-size: 16px;
+      background-color: #f6f6f6;
+      margin: 0.625rem;
+      font-family: "PingFang SC", miui, system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- 跑马灯广播 -->
+    <div class="notify">
+      <img src="img/notify.png" alt="">
+      <div class="marquee">
+        <div class="move-wrap">
+          <p class="scroll-title">使用教程一定要看！！！</p>
+          <!--<p class="scroll-title">!!!交流群人数已到上限，添加下方微信号，邀请进入交流群</p>-->
+          <!--<p class="scroll-title">破解各大影视平台 VIP 会员</p>-->
+        </div>
+      </div>
+    </div>
+    <!-- wx群&使用教程 -->
+    <div class="qrcode">
+      <img class="wx" src="img/qrcode.jpg" alt="">
+      <span class="gift" id="usage-btn">使用教程</span>
+    </div>
+    <!-- 热门通知 -->
+    <div class="hot">
+      <span class="icon">HOT</span>
+      <!--<span id="wechat" class="title" data-clipboard-text="17600298095"> 缺少资源，资源播放不了，资源卡顿投屏问题反馈问题，快速解决。资源热播剧催更 （扫描上面公众号 回复 “客服”，获取客服联系方式，回复 “下载”，获取永久 app 更新地址，更新免费）-->
+      <!--</span>-->
+      <!-- <span id="ths" class="titlehead" >-->
+      <!--      出现播放，崩溃，破解会员问题，等请vip用户们自行更新到 app 最新版本。-->
+      <!--</span>-->
+      
+      <br/>
+     
+      <span id="ths" class="titlehead" >
+            扫上方二维码关注。
+            作用： 缺少资源，资源播放不了，资源卡顿投屏等问题反馈问题，解决。（回复 "咨询" 查看技术客服联系方式
+      </span>
+      
+      <br/>
+      <!--data-clipboard-text="17600298095"-->
+       <span id="wechat" class="title" >
+           使用教程一定要点击观看！！！（一定要，这个界面功能比较复杂，使用不对就无法观看）（腾讯，优酷，爱奇艺等等有的资源，请在这个界面去播放，TV(蓝光) 这条线路，和这里的资源一样，推荐这儿成功率99% ，体验更好）
+           
+      </span>
+    </div>
+    <!-- 播放器 -->
+    <div class="container" id="player"></div>
+    <!-- 提示框_浮层 -->
+    <div class="alert-mask" style="display: none;" id="tips">
+      <div class="alert">
+        <div class="flex">当前功能 正在开发，抱歉</div>
+        <div>
+          <div class="btnCommon success" id="tips-confirm">确定</div>
+        </div>
+      </div>
+      <div class="mask"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/new.js"></script>
+</body>
+
+</html>
